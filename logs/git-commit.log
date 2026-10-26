@@ -1,0 +1,36 @@
+$ git log --oneline
+76ae1a0 Assignment 1 Part 1: Dockerized React + FastAPI app
+
+$ git show --stat --format="%h %an <%ae>%n%s" HEAD
+76ae1a0 Hamza Munir <hammuneer@gmail.com>
+Assignment 1 Part 1: Dockerized React + FastAPI app
+
+ .dockerignore                        |   15 +
+ .gitignore                           |    6 +
+ Dockerfile                           |   48 +
+ README.md                            | 1265 ++++++++++++++++++++++++
+ backend/main.py                      |   40 +
+ backend/requirements.txt             |    2 +
+ frontend/index.html                  |   12 +
+ frontend/package-lock.json           | 1780 ++++++++++++++++++++++++++++++++++
+ frontend/package.json                |   19 +
+ frontend/src/App.css                 |   25 +
+ frontend/src/App.jsx                 |   55 ++
+ frontend/src/main.jsx                |   10 +
+ frontend/vite.config.js              |   10 +
+ logs/docker-anonymous-pull-check.log |    5 +
+ logs/docker-build-check.log          |   41 +
+ logs/docker-build.log                |  194 ++++
+ logs/docker-login.log                |    6 +
+ logs/docker-pull.log                 |   24 +
+ logs/docker-push-1.0.0.log           |  188 ++++
+ logs/docker-push-latest.log          |  170 ++++
+ logs/docker-remote-inspect.log       |   15 +
+ logs/docker-rmi.log                  |    7 +
+ logs/docker-run-from-hub.log         |   18 +
+ logs/gh-repo-create.log              |    1 +
+ logs/gh-repo-view.log                |    1 +
+ logs/git-commit.log                  |   34 +
+ screenshots/app-running.png          |  Bin 0 -> 214299 bytes
+ screenshots/dockerhub-repo.png       |  Bin 0 -> 329977 bytes
+ 28 files changed, 3991 insertions(+)

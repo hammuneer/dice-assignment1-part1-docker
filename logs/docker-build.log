@@ -1,0 +1,194 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.53kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 1.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e 0.0s done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12-slim
+#4 ...
+
+#5 [internal] load metadata for docker.io/library/node:22-alpine
+#5 DONE 0.8s
+
+#4 [internal] load metadata for docker.io/library/python:3.12-slim
+#4 DONE 0.8s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 265B done
+#6 DONE 0.0s
+
+#7 [runtime 1/7] FROM docker.io/library/python:3.12-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704
+#7 resolve docker.io/library/python:3.12-slim@sha256:a0f57064cbdcd6285fa45f51237ab0b35ea8ebaed06a1f5973e89e19dfb86704 0.0s done
+#7 DONE 0.0s
+
+#8 [runtime 2/7] WORKDIR /app
+#8 CACHED
+
+#9 [frontend-build 1/6] FROM docker.io/library/node:22-alpine@sha256:fe4f6d74e20370acb04ad889077d14d0f64a9c8ea6a42bc60cddf1e844699914
+#9 resolve docker.io/library/node:22-alpine@sha256:fe4f6d74e20370acb04ad889077d14d0f64a9c8ea6a42bc60cddf1e844699914 0.0s done
+#9 DONE 0.0s
+
+#10 [frontend-build 2/6] WORKDIR /frontend
+#10 CACHED
+
+#11 [internal] load build context
+#11 transferring context: 458B done
+#11 DONE 0.0s
+
+#12 [runtime 3/7] COPY backend/requirements.txt ./
+#12 DONE 0.0s
+
+#13 [frontend-build 3/6] COPY frontend/package.json frontend/package-lock.json ./
+#13 DONE 0.0s
+
+#14 [frontend-build 4/6] RUN npm ci
+#14 4.195 
+#14 4.195 added 61 packages, and audited 62 packages in 4s
+#14 4.195 
+#14 4.195 7 packages are looking for funding
+#14 4.195   run `npm fund` for details
+#14 4.225 
+#14 4.225 2 vulnerabilities (1 moderate, 1 high)
+#14 4.225 
+#14 4.225 To address all issues, run:
+#14 4.225   npm audit fix --force
+#14 4.225 
+#14 4.225 Run `npm audit` for details.
+#14 4.227 npm notice
+#14 4.227 npm notice New major version of npm available! 10.9.9 -> 12.2.1
+#14 4.227 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+#14 4.227 npm notice To update run: npm install -g npm@12.2.1
+#14 4.227 npm notice
+#14 DONE 4.5s
+
+#15 [runtime 4/7] RUN pip install --upgrade pip && pip install -r requirements.txt
+#15 1.774 Requirement already satisfied: pip in /usr/local/lib/python3.12/site-packages (25.0.1)
+#15 2.993 Collecting pip
+#15 3.535   Downloading pip-26.2.2-py3-none-any.whl.metadata (4.6 kB)
+#15 3.729 Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+#15 ...
+
+#16 [frontend-build 5/6] COPY frontend/ ./
+#16 DONE 0.1s
+
+#15 [runtime 4/7] RUN pip install --upgrade pip && pip install -r requirements.txt
+#15 4.725    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 3.1 MB/s eta 0:00:00
+#15 4.744 Installing collected packages: pip
+#15 4.744   Attempting uninstall: pip
+#15 4.749     Found existing installation: pip 25.0.1
+#15 4.787     Uninstalling pip-25.0.1:
+#15 4.960       Successfully uninstalled pip-25.0.1
+#15 5.964 Successfully installed pip-26.2.2
+#15 ...
+
+#17 [frontend-build 6/6] RUN npm run build
+#17 0.355 
+#17 0.355 > dice-docker-frontend@1.0.0 build
+#17 0.355 > vite build
+#17 0.355 
+#17 0.693 vite v6.0.7 building for production...
+#17 0.771 transforming...
+#17 1.917 ✓ 27 modules transformed.
+#17 2.043 rendering chunks...
+#17 2.051 computing gzip size...
+#17 2.058 dist/index.html                   0.40 kB │ gzip:  0.27 kB
+#17 2.058 dist/assets/index-BKnbo-Yx.css    0.71 kB │ gzip:  0.41 kB
+#17 2.058 dist/assets/index-BPRgs4Ta.js   144.33 kB │ gzip: 46.56 kB
+#17 2.058 ✓ built in 1.33s
+#17 DONE 2.1s
+
+#15 [runtime 4/7] RUN pip install --upgrade pip && pip install -r requirements.txt
+#15 8.961 Collecting fastapi==0.115.6 (from -r requirements.txt (line 1))
+#15 9.500   Downloading fastapi-0.115.6-py3-none-any.whl.metadata (27 kB)
+#15 9.754 Collecting uvicorn==0.34.0 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 2))
+#15 9.945   Downloading uvicorn-0.34.0-py3-none-any.whl.metadata (6.5 kB)
+#15 10.17 Collecting starlette<0.42.0,>=0.40.0 (from fastapi==0.115.6->-r requirements.txt (line 1))
+#15 10.34   Downloading starlette-0.41.3-py3-none-any.whl.metadata (6.0 kB)
+#15 10.84 Collecting pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4 (from fastapi==0.115.6->-r requirements.txt (line 1))
+#15 11.01   Downloading pydantic-2.14.1-py3-none-any.whl.metadata (133 kB)
+#15 11.43 Collecting typing-extensions>=4.8.0 (from fastapi==0.115.6->-r requirements.txt (line 1))
+#15 11.60   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#15 11.79 Collecting click>=7.0 (from uvicorn==0.34.0->uvicorn[standard]==0.34.0->-r requirements.txt (line 2))
+#15 11.96   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#15 12.13 Collecting h11>=0.8 (from uvicorn==0.34.0->uvicorn[standard]==0.34.0->-r requirements.txt (line 2))
+#15 12.30   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#15 12.52 Collecting httptools>=0.6.3 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 2))
+#15 12.69   Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+#15 12.88 Collecting python-dotenv>=0.13 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 2))
+#15 13.05   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+#15 13.28 Collecting pyyaml>=5.1 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 2))
+#15 13.45   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+#15 13.67 Collecting uvloop!=0.15.0,!=0.15.1,>=0.14.0 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 2))
+#15 13.84   Downloading uvloop-0.23.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+#15 14.12 Collecting watchfiles>=0.13 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 2))
+#15 14.30   Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+#15 14.64 Collecting websockets>=10.4 (from uvicorn[standard]==0.34.0->-r requirements.txt (line 2))
+#15 14.81   Downloading websockets-17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+#15 14.99 Collecting annotated-types>=0.6.0 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.115.6->-r requirements.txt (line 1))
+#15 15.16   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#15 16.31 Collecting pydantic-core==2.50.1 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.115.6->-r requirements.txt (line 1))
+#15 16.48   Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+#15 16.66 Collecting typing-inspection>=0.4.4 (from pydantic!=1.8,!=1.8.1,!=2.0.0,!=2.0.1,!=2.1.0,<3.0.0,>=1.7.4->fastapi==0.115.6->-r requirements.txt (line 1))
+#15 16.83   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+#15 17.02 Collecting anyio<5,>=3.4.0 (from starlette<0.42.0,>=0.40.0->fastapi==0.115.6->-r requirements.txt (line 1))
+#15 17.19   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+#15 17.37 Collecting idna>=2.8 (from anyio<5,>=3.4.0->starlette<0.42.0,>=0.40.0->fastapi==0.115.6->-r requirements.txt (line 1))
+#15 17.54   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#15 17.72 Downloading fastapi-0.115.6-py3-none-any.whl (94 kB)
+#15 17.94 Downloading uvicorn-0.34.0-py3-none-any.whl (62 kB)
+#15 18.13 Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+#15 18.64 Downloading pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+#15 19.05    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 5.1 MB/s  0:00:00
+#15 19.22 Downloading starlette-0.41.3-py3-none-any.whl (73 kB)
+#15 19.40 Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#15 19.59 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#15 19.76 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#15 19.95 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#15 20.12 Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (552 kB)
+#15 20.18    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 552.8/552.8 kB 11.0 MB/s  0:00:00
+#15 20.35 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#15 20.52 Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+#15 20.69 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+#15 20.78    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 9.8 MB/s  0:00:00
+#15 20.95 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#15 21.13 Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#15 21.30 Downloading uvloop-0.23.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.5 MB)
+#15 21.95    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 6.9 MB/s  0:00:00
+#15 22.13 Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+#15 22.34 Downloading websockets-17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (225 kB)
+#15 22.51 Installing collected packages: websockets, uvloop, typing-extensions, pyyaml, python-dotenv, idna, httptools, h11, click, annotated-types, uvicorn, typing-inspection, pydantic-core, anyio, watchfiles, starlette, pydantic, fastapi
+#15 23.83 
+#15 23.83 Successfully installed annotated-types-0.8.0 anyio-4.15.1 click-8.5.0 fastapi-0.115.6 h11-0.16.0 httptools-0.9.0 idna-3.20 pydantic-2.14.1 pydantic-core-2.50.1 python-dotenv-1.2.4 pyyaml-6.0.3 starlette-0.41.3 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.34.0 uvloop-0.23.0 watchfiles-1.3.0 websockets-17.3
+#15 DONE 24.0s
+
+#18 [runtime 5/7] COPY backend/ ./
+#18 DONE 0.0s
+
+#19 [runtime 6/7] COPY --from=frontend-build /frontend/dist ./static
+#19 DONE 0.0s
+
+#20 [runtime 7/7] RUN useradd --create-home --uid 1000 appuser && chown -R appuser:appuser /app
+#20 DONE 0.2s
+
+#21 exporting to image
+#21 exporting layers
+#21 exporting layers 2.3s done
+#21 exporting manifest sha256:ed14edb78770f7b802f711491a684037dc8346166735e5f9740fc65e8f051b6c 0.0s done
+#21 exporting config sha256:7c1c336791485b66c343d278ed035a869ab069907bee9415f2fb4f1c5eda0c06 done
+#21 exporting attestation manifest sha256:05f550a54fe37b9693dc28257a6a411e06da79538c5e6d19f244e97ad255195c 0.0s done
+#21 exporting manifest list sha256:ca7698b98dcae4515e9248f47f4b84d9c0776c3dc3707e1e4e6c2a7d280b7e4d 0.0s done
+#21 naming to docker.io/hammuneer/dice-docker-demo:1.0.0 done
+#21 unpacking to docker.io/hammuneer/dice-docker-demo:1.0.0
+#21 unpacking to docker.io/hammuneer/dice-docker-demo:1.0.0 0.7s done
+#21 naming to docker.io/hammuneer/dice-docker-demo:latest done
+#21 unpacking to docker.io/hammuneer/dice-docker-demo:latest 0.0s done
+#21 DONE 3.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/4qm9kr8ixw7548fcz7u9nph7h

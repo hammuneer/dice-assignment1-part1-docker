@@ -1,0 +1,7 @@
+$ docker rmi hammuneer/dice-docker-demo:latest
+Untagged: hammuneer/dice-docker-demo:latest
+Deleted: sha256:ca7698b98dcae4515e9248f47f4b84d9c0776c3dc3707e1e4e6c2a7d280b7e4d
+
+$ docker images hammuneer/dice-docker-demo
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA

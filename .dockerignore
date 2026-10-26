@@ -1,0 +1,15 @@
+# Dependencies and build output are recreated inside the image
+**/node_modules
+frontend/dist
+**/__pycache__
+**/*.pyc
+.venv
+
+# Not needed in the image
+.git
+.gitignore
+.dockerignore
+Dockerfile
+README.md
+screenshots
+.DS_Store

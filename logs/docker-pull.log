@@ -1,0 +1,24 @@
+$ docker pull hammuneer/dice-docker-demo:1.0.0
+1.0.0: Pulling from hammuneer/dice-docker-demo
+80c9d659fbf1: Pulling fs layer
+37a956838447: Pulling fs layer
+e8fcc7e433d2: Pulling fs layer
+3680df52ff43: Pulling fs layer
+c69aeabee076: Pulling fs layer
+9b78d17c15b6: Pulling fs layer
+e8fcc7e433d2: Already exists
+3680df52ff43: Already exists
+80c9d659fbf1: Already exists
+9b78d17c15b6: Already exists
+c69aeabee076: Already exists
+37a956838447: Already exists
+e8fcc7e433d2: Pull complete
+37a956838447: Pull complete
+3680df52ff43: Pull complete
+80c9d659fbf1: Pull complete
+9b78d17c15b6: Pull complete
+c69aeabee076: Pull complete
+89815c944b65: Download complete
+Digest: sha256:ca7698b98dcae4515e9248f47f4b84d9c0776c3dc3707e1e4e6c2a7d280b7e4d
+Status: Downloaded newer image for hammuneer/dice-docker-demo:1.0.0
+docker.io/hammuneer/dice-docker-demo:1.0.0

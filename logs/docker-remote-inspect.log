@@ -1,0 +1,15 @@
+Name:      docker.io/hammuneer/dice-docker-demo:1.0.0
+MediaType: application/vnd.oci.image.index.v1+json
+Digest:    sha256:ca7698b98dcae4515e9248f47f4b84d9c0776c3dc3707e1e4e6c2a7d280b7e4d
+           
+Manifests: 
+  Name:        docker.io/hammuneer/dice-docker-demo:1.0.0@sha256:ed14edb78770f7b802f711491a684037dc8346166735e5f9740fc65e8f051b6c
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    linux/amd64
+               
+  Name:        docker.io/hammuneer/dice-docker-demo:1.0.0@sha256:05f550a54fe37b9693dc28257a6a411e06da79538c5e6d19f244e97ad255195c
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    unknown/unknown
+  Annotations: 
+    vnd.docker.reference.digest: sha256:ed14edb78770f7b802f711491a684037dc8346166735e5f9740fc65e8f051b6c
+    vnd.docker.reference.type:   attestation-manifest

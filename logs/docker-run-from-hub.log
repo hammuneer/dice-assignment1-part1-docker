@@ -1,0 +1,18 @@
+$ docker images hammuneer/dice-docker-demo
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+IMAGE                              ID             DISK USAGE   CONTENT SIZE   EXTRA
+hammuneer/dice-docker-demo:1.0.0   ca7698b98dca        250MB         59.4MB        
+
+$ docker run -d --name dice-app -p 8000:8000 hammuneer/dice-docker-demo:1.0.0
+341ef0c58a751f1baca67ae469d9ea522d2cfe235c3148e4d1b578c819e80efe
+
+$ docker ps --filter name=dice-app
+CONTAINER ID   IMAGE                              COMMAND                  CREATED         STATUS                   PORTS                                         NAMES
+341ef0c58a75   hammuneer/dice-docker-demo:1.0.0   "uvicorn main:app --…"   7 seconds ago   Up 6 seconds (healthy)   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   dice-app
+
+$ curl -s localhost:8000/api/health
+{"status":"ok"}
+$ curl -s localhost:8000/api/info
+{"app_version":"1.0.0","hostname":"341ef0c58a75","python_version":"3.12.15","platform":"Linux-6.12.72-linuxkit-x86_64-with-glibc2.41","server_time":"2026-10-26T21:36:19.469448+00:00"}
+$ curl -s -o /dev/null -w "%{http_code}" localhost:8000/
+200
